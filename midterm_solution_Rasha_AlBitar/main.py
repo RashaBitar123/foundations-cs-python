@@ -40,8 +40,10 @@ class Browser:
             parent_tab['nested_tabs'].append(nested_tab)
         else:
             print("Invalid parent tab index.")
-
-
+    
+    def clear_all_tabs(self):
+        self.tabs = []
+        print("All tabs cleared.")
 
 def main():
     browser = Browser()
@@ -53,6 +55,7 @@ def main():
         print("3. Switch Tab")
         print("4. Display All Tabs")
         print("5. Open Nested Tabs")
+        print("6. Clear All Tabs")
         print("9. Exit")
 
         choice = input("Enter your choice: ")
@@ -74,6 +77,8 @@ def main():
             title = input("Enter nested tab title: ")
             url = input("Enter nested tab URL: ")
             browser.open_nested_tab(parent_index, title, url)
+        elif choice == '6':
+            browser.clear_all_tabs()
         elif choice == '9':
             print("Exiting the browser.")
             break
@@ -82,6 +87,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+    
+
 
 
 
